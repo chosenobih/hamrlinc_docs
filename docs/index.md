@@ -1,6 +1,6 @@
 # Homepage
 
-For pipeline codes visit [HARMLINC GitHub Repo](https://github.com/chosenobih/HAMRLINC/tree/main).
+For pipeline code visit [HARMLINC GitHub Repo](https://github.com/chosenobih/HAMRLINC/tree/main).
 
 
 ## Overview
@@ -11,4 +11,8 @@ For pipeline codes visit [HARMLINC GitHub Repo](https://github.com/chosenobih/HA
 
 ## HARMLINC Workflow
 
-![HARMLINC workflow](/home/chosen/hamrlinc_docs/figures/hamrlinc_workflow.png){ align=center }
+<figure markdown>
+  ![HARMLINC workflow](../figures/hamrlinc_workflow.png){ align=left }
+  <figcaption>HAMRLINC workflow: Overview of the data flow of HAMRLINC, from input data, which could be raw FASTQ files or list of SRA-IDs to quality control, trimming, mapping, pre-processing and downstream analysis. Pre-processing steps are in yellow, main steps are in grey and, check-points are in peach. </figcaption>
+</figure>
+
