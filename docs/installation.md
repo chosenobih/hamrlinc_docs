@@ -1,8 +1,4 @@
-# Commandline Arguments & Installation
-
-## Required Dependencies
-* Linux-based computer, server, or cluster.
-* [Docker](https://docs.docker.com/engine/install/)
+# Commandline Arguments
 
 
 ## Commandline Arguments and Description
@@ -36,15 +32,3 @@
 | -D | </path/to/known_lincRNA_file\> only required under evolinc MO option |
 | -m | \[HAMR model\] default=euk_trna_mods.Rdata |
 | -h | \[help message\]|
-
-## Pulling HAMRLINC Docker Image
-To run HAMRLINC, you need to first pull the docker image for the pipeline to your computer. If you are not familiar with container technology and would like to learn the basics, please check out [CyVerse Container & Cloud Native Camp Documentation](https://cc.cyverse.org/). It is open source and free. Dig in!
-
-Pull HAMRLINC docker image. This should take a few minutes depending on your internet speed.
-```
-docker pull chosenobih/hamrlinc:v0.1
-```
-After building the conatiner, run the code below to be sure that you now have the image on your computer
-```
-docker image ls
-```
