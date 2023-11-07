@@ -54,7 +54,9 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
-  - glightbox
+  - search
+  - glightbox:
+      autoOpen: false
 
 copyright: |
   &copy; 2023 <a href="https://github.com/chosenobih/HAMRLINC/tree/main" target="_blank" rel="noopener">HARMLINC Development Team</a>
