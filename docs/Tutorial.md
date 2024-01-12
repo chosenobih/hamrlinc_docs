@@ -19,7 +19,7 @@ Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQT
 The demo csv files are great examples for what the actual file should look like. 
 
 ### -d
-The input folder should contain only your fastq files, and nothing else. 4 types of suffices are supported: .fq / .fastq / .fq.gz / .fastq.gz
+The input folder should contain only your fastq files, and nothing else. 4 types of suffixes are supported: .fq / .fastq / .fq.gz / .fastq.gz
 
 ### TopHat2 mode
 We recommend using STAR aligner for its speed and simplicity. However if you'd like to use TopHat2, you can input a genome index folder if one is available. If none is inputted, the program will use bowtie2 to create one. 
