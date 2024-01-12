@@ -10,7 +10,7 @@ There are 2 columns. Left column is either SRR accession codes, or the file base
 
 The right column are succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. Below are some examples
 
-## File Naming Conventions
+### File Naming Conventions
 | file name in csv | actual sample |
 | :---: | :---: |
 | LemontHeat_mRNA_rep2 | a fastq file generated from mRNA-sequencing replicate 2 of a heat treated Lemont variant O. sativa individual |
