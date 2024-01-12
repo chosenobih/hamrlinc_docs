@@ -21,7 +21,6 @@ The demo csv files are great examples for what the actual file should look like.
 #### Paired End
 In the case of paired end sequencing, ignore the _1 and _2 in your key, and create only 1 row for each paired end sample. For example, if one of your soybean samples are paired end sequenced as /path/to/2024-1-2-soy-illumina3000-XYZ_1.fq and /path/to/2024-1-2-soy-illumina3000-XYZ_2.fq, in your csv, the row for this sample should look something like 
 
-| | |
 | :---: | :---: |
 | 2024-1-2-soy-illumina3000-XYZ | soyWT_mRNA_rep1 |
 
