@@ -16,9 +16,16 @@ Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQT
 | LemontHeat_mRNA_rep2 | a fastq file generated from mRNA-sequencing replicate 2 of a heat treated Lemont variant O. sativa individual |
 | dxo1Salt_GMUCT_rep1 | a fastq file generated from GMUCT sequencing replicate 1 of a salt treated A. thaliana individual with the gene AtDXO1 knocked out |
 
-The demo csv files are a great examples for what the actual file should look like. 
+The demo csv files are great examples for what the actual file should look like. 
 
-###
+### -d
+The input folder should contain only your fastq files, and nothing else. 4 types of suffices are supported: .fq / .fastq / .fq.gz / .fastq.gz
+
+### TopHat2 mode
+We recommend using STAR aligner for its speed and simplicity. However if you'd like to use TopHat2, you can input a genome index folder if one is available. If none is inputted, the program will use bowtie2 to create one. 
+
+### -k, -p, -u
+The analysis steps are condensed into three modules, and each of these options can activate one of them. If none of these three flags are included, HAMRLINC will not perform any analysis. 
 
 ## Required Dependencies
 * Linux-based computer, server, or cluster
