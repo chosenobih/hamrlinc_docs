@@ -84,11 +84,16 @@ Please understand that this analysis is time-consuming in its nature, where the 
 * Every run will automatically create a new log file in your working directory
 * If you ran into an error and the program exited, the next run will resume from the last saved checkpoint.
 
-HAMRLINC can be clearly divided into 3 phases.
+HAMRLINC can be unambiguously divided into 3 phases.
 ### Phase 1: FASTQ Preparation
 HAMRLINC will acquire or locate the fastq file. In the case of SRR accession code, we use SRA-toolkit's fasterq-dump function. Then, HAMRLINC trims each fastq with automatic adaptor detection with trim-galore, a wrapper around cutadapt. Finally, HAMRLINC performs fastqc for quality check. Files generated in this process are found in /datasets/trimmed and /datasets/fastqc. The trimmed fastq files will be used for alignment next.
 
-### Phase 2: 
+### Phase 2: Alignment, Pre-processing, HAMR and LINC
+HAMRLINC will use either STAR or TopHat2 to align each fastq to the provided reference genome. It will then pipe the output through a series of samtools, stringtie2, cufflink, and gatk commands to pre-process the bam file as required for HAMR or EVOLINC, before running either or both of them. During this phase, you will see \[SAMPLEKEY\] associated with every status message for each sample outputted by HAMRLINC. You will also see numerous lines outputted by each of the packages used. This phase tends to take the longest.
+
+### Phase 3: Post-processing, Visualization
+HAMRLINC will collect sequencing depth information with samtools coverage, call consensus across all replicates for each sample group (we take the union of pairwise intersection), overlap that consensus with the provided genome annotation file and to associate different modifications with regions of an mRNA both structually (3', CDS, 5') and biologically (exon, non-coding). This information will then be summarized into mod_long.csv for the entire experiment (across different sample groups and sequencing methods). HAMRLINC will then generate some plots to help user visualize the spread, abundance, and types of each modification.
+
 
 ## Output Interpretation
 
