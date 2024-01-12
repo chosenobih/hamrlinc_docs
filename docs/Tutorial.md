@@ -4,18 +4,21 @@
 Please carefully read this section as improper inputs can impact the proper functioning of the software. If you wondered "why did they do this" when running the demo, you should be able to find your answer below. 
 
 ### -c
-This .csv is the most crucial, as it contains information for how to locate your fastq files, and information for how you want them identified in later visualizations. 
+This .csv is the most crucial, as it contains information for how to locate your fastq files, and information for how you want them identified in later visualizations. There are 2 columns. Left column is the key and right column is the value. 
+#### Keys 
+Either SRR accession codes, or the file basename of the fastq input directory. If you decide to use SRR accession codes, the entire column must be SRR accession codes; visa versa. If you use SRR accession codes, each number must correspond to an existing entry in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) database. If you input your own fastq files, the file basenames should NOT include the file suffix like .fq or .fastq.gz in your csv file.
+#### Values
+Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. Below are some examples.
 
-There are 2 columns. Left column is either SRR accession codes, or the file basename of the fastq input directory. If you decide to use SRR accession codes, the entire column must be SRR accession codes; visa versa. If you use SRR accession codes, each number must correspond to an existing entry in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) database. If you input your own fastq files, the file basenames should NOT include the file suffix like .fq or .fastq.gz in your csv file.
-
-The right column are succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. Below are some examples.
-
-### File Naming Conventions Examples
+#### File Naming Conventions Examples
 | File name in csv | Actual sample |
 | :---: | :---: |
 | LemontHeat_mRNA_rep2 | a fastq file generated from mRNA-sequencing replicate 2 of a heat treated Lemont variant O. sativa individual |
 | dxo1Salt_GMUCT_rep1 | a fastq file generated from GMUCT sequencing replicate 1 of a salt treated A. thaliana individual with the gene AtDXO1 knocked out |
 
+The demo csv files are a great examples for what the actual file should look like. 
+
+###
 
 ## Required Dependencies
 * Linux-based computer, server, or cluster
