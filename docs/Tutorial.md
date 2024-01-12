@@ -80,9 +80,10 @@ run HAMRLINC in SE mode with SRA IDs. Only RNA modification annotation analysis 
 docker run --rm -v $(pwd):/working-dir -w /working-dir chosenobih/hamrlinc:v0.3 -o hamrlinc_test -c /demo/PRJNA478205.csv -g Arabidopsis_thaliana.TAIR10.dna.toplevel.fa -i Arabidopsis_thaliana.TAIR10.57.gff3 -l 50 -s 135000000 -n 8 -k
 ```
 ## Some Notes on Software Behaviors and Terminal Output
-Please understand that this analysis is time-consuming in its nature, where the time limiting factors are the individual packages used themselves, like STAR, samtools, or GATK. While we have enabled parallel processing and multicore where possible, in general, the entire run should still take well over an hour, and over 10 hours for extreme cases. Due to this, we have included several features
+Please understand that this analysis is time-consuming in its nature, where the time limiting factors are the individual packages used themselves, like STAR, samtools, or GATK. While we have enabled parallel processing and multicore where possible, in general, the entire run should still take well over an hour, and over 10 hours for extreme cases. To save headaches, we have included several features:
 * Every run will automatically create a new log file in your working directory
 * If you ran into an error and the program exited, the next run will resume from the last saved checkpoint.
+
 
 HAMRLINC can be unambiguously divided into 3 phases.
 ### Phase 1: FASTQ Preparation
