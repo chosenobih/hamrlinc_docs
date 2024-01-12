@@ -4,9 +4,13 @@
 Please carefully read this section as improper inputs can impact the proper functioning of the software.
 ### -c
 This .csv is the most crucial, it contains information for how to locate your fastq files, and information for how you want them identified in later visualizations. 
+
 There are 2 columns. Left column is either SRR accession codes, or the file basename of the fastq input directory. If you decide to use SRR code, the entire column must be SRR code; visa versa. If you use SRR accession code, each number must correspond to an existing entry in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) database. If you input your own fastq files, the file basenames should NOT include the file suffix like .fq or .fastq.gz in your csv file.
+
 The right column is a succinct name of each fastq file. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. 
+
   Example 1: a fastq file generated from mRNA-sequencing replicate 2 of a heat treated Lemont variant O. sativa individual should have the name "LemontHeat_mRNA_rep2". 
+
   Example 2: a fastq file generated from GMUCT sequencing replicate 1 of a salt treated A. thaliana individual with the gene AtDXO1 knocked out should have the name "dxo1Salt_GMUCT_rep1".
 
 
