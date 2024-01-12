@@ -20,7 +20,7 @@ The demo csv files are great examples for what the actual file should look like.
 
 #### Paired End
 In the case of paired end sequencing, ignore the _1 and _2 in your key, and create only 1 row for each paired end sample. For example, if one of your soybean samples are paired end sequenced as /path/to/2024-1-2-soy-illumina3000-XYZ_1.fq and /path/to/2024-1-2-soy-illumina3000-XYZ_2.fq, in your csv, the row for this sample should look something like 
-|||
+| Key | Value |
 | :---: | :---: |
 | 2024-1-2-soy-illumina3000-XYZ | soyWT_mRNA_rep1 |
 
@@ -81,6 +81,7 @@ docker run --rm -v $(pwd):/working-dir -w /working-dir chosenobih/hamrlinc:v0.3 
 ```
 ## Some Notes on Software Behaviors and Terminal Output
 Please understand that this analysis is time-consuming in its nature, where the time limiting factors are the individual packages used themselves, like STAR, samtools, or GATK. While we have enabled parallel processing and multicore where possible, in general, the entire run should still take well over an hour, and over 10 hours for extreme cases. To save headaches, we have included several features:
+
 * Every run will automatically create a new log file in your working directory
 * If you ran into an error and the program exited, the next run will resume from the last saved checkpoint.
 
