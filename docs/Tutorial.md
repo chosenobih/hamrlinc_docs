@@ -18,6 +18,11 @@ Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQT
 
 The demo csv files are great examples for what the actual file should look like. 
 
+#### Paired End
+In the case of paired end sequencing, ignore the _1 and _2 in your key, and create only 1 row for each paired end sample. For example, if one of your soybean samples are paired end sequenced as /path/to/2024-1-2-soy-illumina3000-XYZ_1.fq and /path/to/2024-1-2-soy-illumina3000-XYZ_2.fq, in your csv, the row for this sample should look something like 
+
+| 2024-1-2-soy-illumina3000-XYZ | soyWT_mRNA_rep1 |
+
 ### -d
 The input folder should contain only your fastq files, and nothing else. 4 types of suffixes are supported: .fq / .fastq / .fq.gz / .fastq.gz
 
@@ -73,6 +78,16 @@ run HAMRLINC in SE mode with SRA IDs. Only RNA modification annotation analysis 
 ```
 docker run --rm -v $(pwd):/working-dir -w /working-dir chosenobih/hamrlinc:v0.3 -o hamrlinc_test -c /demo/PRJNA478205.csv -g Arabidopsis_thaliana.TAIR10.dna.toplevel.fa -i Arabidopsis_thaliana.TAIR10.57.gff3 -l 50 -s 135000000 -n 8 -k
 ```
+## Some Notes on Software Behaviors and Terminal Output
+Please understand that this analysis is time-consuming in its nature, where the time limiting factors are the individual packages used themselves, like STAR, samtools, or GATK. While we have enabled parallel processing and multicore where possible, in general, the entire run should still take well over an hour, and over 10 hours for extreme cases. Due to this, we have included several features
+* Every run will automatically create a new log file in your working directory
+* If you ran into an error and the program exited, the next run will resume from the last saved checkpoint.
+
+HAMRLINC can be clearly divided into 3 phases.
+### Phase 1: FASTQ Preparation
+HAMRLINC will acquire or locate the fastq file. In the case of SRR accession code, we use SRA-toolkit's fasterq-dump function. Then, HAMRLINC trims each fastq with automatic adaptor detection with trim-galore, a wrapper around cutadapt. Finally, HAMRLINC performs fastqc for quality check. Files generated in this process are found in /datasets/trimmed and /datasets/fastqc. The trimmed fastq files will be used for alignment next.
+
+### Phase 2: 
 
 ## Output Interpretation
 
