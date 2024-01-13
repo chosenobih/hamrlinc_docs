@@ -4,7 +4,7 @@
 Please carefully read this section as inadequate inputs can impact the proper functioning of the software. If you ever wondered "why did they do this" when running the demo, you should be able to find your answer here. 
 
 ### -c
-This .csv is the most crucial, as it contains information for how to locate your fastq files, and information for how you want them identified in later visualizations. There are 2 columns. Left column is the key and right column is the value. 
+This .csv is the most crucial. It's a guide for HAMRLINC to locate your fastq files and present your samples in later visualizations. There are 2 columns. Left column contains the keys and right column contains the values. 
 #### Keys 
 Either SRR accession codes, or the file basename of the fastq input directory. If you decide to use SRR accession codes, the entire column must be SRR accession codes; visa versa. If you use SRR accession codes, each number must correspond to an existing entry in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) database. If you input your own fastq files, the file basenames should NOT include the file suffix like .fq or .fastq.gz in your csv file.
 #### Values
