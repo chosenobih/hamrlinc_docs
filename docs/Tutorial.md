@@ -1,7 +1,7 @@
 # Tutorial
 
 ## Some Notes on Inputs
-Please carefully read this section as improper inputs can impact the proper functioning of the software. If you wondered "why did they do this" when running the demo, you should be able to find your answer below. 
+Please carefully read this section as inadequate inputs can impact the proper functioning of the software. If you ever wondered "why did they do this" when running the demo, you should be able to find your answer here. 
 
 ### -c
 This .csv is the most crucial, as it contains information for how to locate your fastq files, and information for how you want them identified in later visualizations. There are 2 columns. Left column is the key and right column is the value. 
