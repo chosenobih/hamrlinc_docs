@@ -87,8 +87,8 @@ Please understand that this analysis is time-consuming in its nature, where the 
 * Every run will automatically create a new log file in your working directory
 * If you ran into an error and the program exited, the next run will resume from the last saved checkpoint.
 
-
-HAMRLINC can be unambiguously divided into 3 phases.
+---
+Moreover, HAMRLINC can be unambiguously divided into 3 phases.
 ### Phase 1: FASTQ Preparation
 HAMRLINC will acquire or locate the fastq file. In the case of SRR accession code, we use SRA-toolkit's fasterq-dump function. Then, HAMRLINC trims each fastq with automatic adaptor detection with trim-galore, a wrapper around cutadapt. Finally, HAMRLINC performs fastqc for quality check. Files generated in this process are found in /datasets/trimmed and /datasets/fastqc. The trimmed fastq files will be used for alignment next.
 
