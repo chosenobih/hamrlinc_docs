@@ -8,7 +8,7 @@ This .csv is the most crucial. It's a guide for HAMRLINC to locate your fastq fi
 #### Keys 
 Either SRR accession codes, or the file basename of the fastq input directory. If you decide to use SRR accession codes, the entire column must be SRR accession codes, visa versa. If you use SRR accession codes, each code must correspond to an existing entry in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) database. If you input your own fastq files, the file basenames should NOT include the file suffix like .fq or .fastq.gz in your csv file. See paired end example below.
 #### Values
-Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. Below are some examples.
+Succinct names for each fastq file in the context of the experiment. The naming must follow the form: SAMPLE_SEQTECH_REP. Note "_" is the delimiter and is crucial for the program. TREATMENT includes information on variant, genotype, and treatment. SEQTECH is the sequencing method used. REP is the biological replicate number. Below are some examples.
 
 #### File Naming Conventions Examples
 | File name in csv | Actual sample |
