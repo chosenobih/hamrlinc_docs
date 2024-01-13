@@ -13,8 +13,8 @@ Succinct names for each fastq file. The naming must follow the form: SAMPLE_SEQT
 #### File Naming Conventions Examples
 | File name in csv | Actual sample |
 | :---: | :---: |
-| LemontHeat_mRNA_rep2 | a fastq file generated from mRNA-sequencing replicate 2 of a heat treated Lemont variant O. sativa individual |
-| dxo1Salt_GMUCT_rep1 | a fastq file generated from GMUCT sequencing replicate 1 of a salt treated A. thaliana individual with the gene AtDXO1 knocked out |
+| LemontHeat_mRNA_rep2 | a fastq file generated from mRNA-sequencing replicate 2 of a heat-treated Lemont variant O. sativa individual |
+| dxo1Salt_GMUCT_rep1 | a fastq file generated from GMUCT sequencing replicate 1 of a salt-treated A. thaliana individual with the gene AtDXO1 knocked out |
 
 The demo csv files are great examples for what the actual file should look like. 
 
